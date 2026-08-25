@@ -11,6 +11,12 @@ SolarTopoCrackNet extends the earlier edge-guided baseline with four task-specif
 3. **Topology head** that predicts a thin skeleton / centerline map of the defect region.
 4. **Boundary-topology consistency loss** that couples region, boundary, and topology predictions.
 
+
+## STC-Net Architecture
+
+![STC-Net model architecture](model.png)
+
+
 This is designed for EL segmentation settings where many mistakes come from:
 - thin cracks
 - fragmented masks
