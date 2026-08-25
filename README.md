@@ -25,7 +25,7 @@ STC-Net is designed for thin, fragmented, and low-contrast cracks in EL images. 
 ## Architecture
 
 <p align="center">
-  <img src="model.png" alt="STC-Net architecture" width="850">
+  <img src="assets\model.png" alt="STC-Net architecture" width="850">
 </p>
 
 ---
