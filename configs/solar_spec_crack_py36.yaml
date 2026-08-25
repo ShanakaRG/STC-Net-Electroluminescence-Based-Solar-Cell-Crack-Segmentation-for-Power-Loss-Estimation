@@ -1,0 +1,57 @@
+project_name: solar_spec_crack_py36
+
+data:
+  train_images: /path/to/dataset/train/images
+  train_masks: /path/to/dataset/train/masks
+  val_images: null
+  val_masks: null
+  test_images: /path/to/dataset/test/images
+  test_masks: /path/to/dataset/test/masks
+  image_size: 512
+  mask_threshold: 127
+  val_ratio: 0.2
+  mean: [0.5]
+  std: [0.5]
+
+model:
+  name: SolarSpecCrackNet
+  in_channels: 1
+  num_classes: 1
+  base_channels: 32
+  depths: [2, 2, 4, 2]
+  drop_path_rate: 0.10
+  spectral_cutoff: 0.16
+  deep_supervision: true
+
+loss:
+  bce_weight: 0.45
+  dice_weight: 0.55
+  seg_pos_weight: 3.0
+  seg_weight: 1.0
+  edge_weight: 0.20
+  edge_pos_weight: 3.0
+  aux_weight: 0.25
+  coarse_weight: 0.20
+  boundary_boost: 2.0
+  focal_gamma: 1.5
+
+loader:
+  batch_size: 4
+  num_workers: 0
+
+optim:
+  lr: 0.0003
+  min_lr: 0.000001
+  weight_decay: 0.0001
+
+train:
+  epochs: 140
+  seed: 42
+  amp: false
+  grad_clip: 1.0
+  early_stopping_patience: 25
+  output_dir: ./outputs/solar_spec_crack_py36
+
+eval:
+  threshold: 0.45
+  selection_metric: iou

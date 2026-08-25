@@ -1,0 +1,9 @@
+# Generic requirements (do not use this to upgrade an existing Torch/CUDA install blindly)
+
+numpy>=1.19.2
+PyYAML>=5.4.1
+tqdm>=4.64.1
+opencv-python>=3.4.2
+
+# If you already have torch/torchvision installed and working, keep them.
+# Otherwise install versions compatible with your CUDA and Python build manually.

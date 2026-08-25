@@ -1,0 +1,72 @@
+project_name: solar_topo_crack_py36
+
+data:
+  train_images: /path/to/dataset/train/images
+  train_masks: /path/to/dataset/train/masks
+
+  val_images: null
+  val_masks: null
+
+  test_images: /path/to/dataset/test/images
+  test_masks: /path/to/dataset/test/masks
+
+  image_size: 512
+  mask_threshold: 127
+  val_ratio: 0.2
+  mean: [0.5]
+  std: [0.5]
+
+model:
+  name: SolarTopoCrackNet
+  in_channels: 1
+  num_classes: 1
+  base_channels: 32
+  depths: [2, 2, 4, 2]
+  drop_path_rate: 0.10
+  deep_supervision: true
+  spectral_cutoff: 0.16
+
+loss:
+  bce_weight: 0.50
+  dice_weight: 0.50
+  seg_pos_weight: 2.5
+  boundary_boost: 2.5
+  focal_gamma: 0.0
+
+  seg_weight: 1.0
+  edge_weight: 0.15
+  topo_weight: 0.20
+  consistency_weight: 0.10
+  aux_weight: 0.25
+  coarse_weight: 0.20
+
+  edge_pos_weight: 3.0
+  topo_bce_weight: 0.5
+  topo_dice_weight: 0.5
+  topo_pos_weight: 4.0
+
+  cons_boundary_weight: 0.50
+  cons_inside_weight: 1.00
+  cons_anti_edge_weight: 0.25
+
+loader:
+  batch_size: 8
+  num_workers: 0
+
+optim:
+  lr: 0.0003
+  min_lr: 0.000001
+  weight_decay: 0.0001
+
+train:
+  epochs: 120
+  seed: 42
+  amp: false
+  data_parallel: true
+  grad_clip: 1.0
+  early_stopping_patience: 20
+  output_dir: ./outputs/solar_topo_crack_py36
+
+eval:
+  threshold: 0.5
+  selection_metric: iou

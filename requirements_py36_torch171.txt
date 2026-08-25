@@ -1,0 +1,11 @@
+# For Python 3.6 + Torch 1.7.1 / Torchvision 0.8.2 environments
+# Use this only if you need to install missing packages without changing your Torch stack.
+
+numpy==1.19.2
+PyYAML==5.4.1
+tqdm==4.64.1
+opencv-python==4.6.0.66
+
+# Keep your existing torch / torchvision:
+# torch==1.7.1
+# torchvision==0.8.2
