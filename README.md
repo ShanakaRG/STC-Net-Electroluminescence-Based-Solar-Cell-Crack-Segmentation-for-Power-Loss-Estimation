@@ -140,11 +140,16 @@ python infer_crack_power_eval.py \
 If you use this work, please cite the paper:
 
 ```bibtex
-@article{gunasekara2026stcnet,
-  title={STC-Net: Electroluminescence-Based Solar Cell Crack Segmentation for Power Loss Estimation},
-  author={Gunasekara, Shanaka Ramesh and others},
+@INPROCEEDINGS{11691399,
+  author={Gunasekara, Shanaka Ramesh and Jayasinghe, Akila Eranda and Guruge, Imasha and Fernando, Nuwantha and Asadi, Ehsan},
+  booktitle={2026 Moratuwa Engineering Research Conference (MERCon)}, 
+  title={STC-Net: Electroluminescence-Based Solar Cell Crack Segmentation for Power Loss Estimation}, 
   year={2026},
-  eprint={2608.01714},
-  archivePrefix={arXiv}
+  volume={},
+  number={},
+  pages={526-531},
+  keywords={Cells (biology);Equations;Decoding;Modeling;Topology;Modules (abstract algebra);Photovoltaic cells;Tagging;Printing;Degradation;Solar cell defect segmentation;power loss estimation;computer vision},
+  doi={10.1109/MERCon71835.2026.11691399}}
+
 }
 ```
